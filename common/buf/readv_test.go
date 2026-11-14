@@ -1,5 +1,4 @@
-//go:build !wasm
-// +build !wasm
+//go:build !openbsd
 
 package buf_test
 
@@ -9,12 +8,10 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-
-	"golang.org/x/sync/errgroup"
-
 	"github.com/xtls/xray-core/common"
 	. "github.com/xtls/xray-core/common/buf"
 	"github.com/xtls/xray-core/testing/servers/tcp"
+	"golang.org/x/sync/errgroup"
 )
 
 func TestReadvReader(t *testing.T) {
